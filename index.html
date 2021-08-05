@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/b8ffa0db99.js" crossorigin="anonymous"></script>
+    <title>FlashCard Project</title>
+</head>
+<body>
+    <div class="modal-flashCard">
+        <div class="modal modal-close">
+            <i class="fa fa-times close"></i>
+            <form id="getQuestion">
+                <div>
+                    <label>Question</label>
+                    <input required class='questionModal' type="text">
+                </div>
+                <div>
+                    <label>Answer</label>
+                    <input required class='answerModal' type="text">
+                </div>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+    <div class="addFlashCard">
+        <h1>FlashCards</h1>
+        <button id="modalActivator">Add Question</button>
+    </div>
+    <div class="questionList">
+        <div class="newQuestion">
+            <h2 class="question">Example Question</h2>
+            <a href="" class="showAnswer">Show/Hide Answer</a>
+            <h2 class="answer hidden">Yare yare daze</h2>
+            <div class="buttons">
+                <button class='editQuestion'>EDIT</button>
+                <button class='deleteQuestion'>DELETE</button>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
