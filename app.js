@@ -43,7 +43,6 @@ form.addEventListener('submit', e => {
     let answer = answerModal.value
     questionModal.value =''
     answerModal.value = ''
-
     questionList.innerHTML += `<div class='newQuestion'>
                                     <h2 class="question">${question}</h2>
                                     <a href="" class="showAnswer">Show/Hide Answer</a>
@@ -56,6 +55,7 @@ form.addEventListener('submit', e => {
     hideModal()
     questionDeleter()
     displayAnswer()
+    changeQuestion()
 })
 
 const displayAnswer = () => {
@@ -81,5 +81,21 @@ const questionDeleter = () => {
     })
 }
 
+const changeQuestion = () => {
+    let changer = document.querySelectorAll('.editQuestion')
+    changer.forEach((item) => {
+        item.addEventListener('click', (e) => {
+            e.target.parentElement.parentElement.remove()
+            e.target.parentElement.parentElement.children[2]
+            let hereQuestion = e.target.parentElement.parentElement.children[0]
+            let hereAnswer = e.target.parentElement.parentElement.children[2]
+            questionModal.value = hereQuestion.textContent
+            answerModal.value = hereAnswer.textContent
+            showModal()
+        })
+    })
+}
+
 displayAnswer()
 questionDeleter()
+changeQuestion()
